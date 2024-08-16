@@ -1,0 +1,96 @@
+1. a
+Write a query to return the first and last post for each user.
+SELECT
+    p.userId,
+    (SELECT p1.id FROM Posts p1 WHERE p1.userId = p.userId ORDER BY p1.id ASC LIMIT 1) AS first_post_id,
+    (SELECT p1.title FROM Posts p1 WHERE p1.userId = p.userId ORDER BY p1.id ASC LIMIT 1) AS first_post_title,
+    (SELECT p1.body FROM Posts p1 WHERE p1.userId = p.userId ORDER BY p1.id ASC LIMIT 1) AS first_post_body,
+    (SELECT p2.id FROM Posts p2 WHERE p2.userId = p.userId ORDER BY p2.id DESC LIMIT 1) AS last_post_id,
+    (SELECT p2.title FROM Posts p2 WHERE p2.userId = p.userId ORDER BY p2.id DESC LIMIT 1) AS last_post_title,
+    (SELECT p2.body FROM Posts p2 WHERE p2.userId = p.userId ORDER BY p2.id DESC LIMIT 1) AS last_post_body
+FROM
+    Posts p
+GROUP BY
+    p.userId
+
+1. b
+How many posts a user generates on average? 10
+
+SELECT
+    AVG(number) 
+FROM
+    (SELECT COUNT(*) AS number
+     FROM Posts
+     GROUP BY userId)
+
+2. You have a table named Campaigns with the following columns:
+- campaignId, (varchar)
+- createDate, (date)
+- advertiserId, (varchar)
+- adId, (int)
+- budget, (int)
+and a table named Ads with the following columns:
+- adId, (int)
+- createDate, (date)
+- campaignId, (varchar)
+- geoTargeting (char)
+
+2. a
+Write a join query that would match all of the ads with the relevant campaigns
+
+SELECT
+    c.campaignId,
+    c.createDate AS campaign_create_date,
+    c.advertiserId,
+    c.adId AS campaign_ad_id,
+    c.budget,
+    a.adId AS ad_ad_id,
+    a.createDate AS ad_create_date,
+    a.geoTargeting
+FROM
+    Campaigns c
+INNER JOIN
+    Ads a ON c.campaignId = a.campaignId
+
+2. b
+Write a join query that would show the top 3 geoTargeting locations, with the
+corresponding campaigns
+
+SELECT
+    a.geoTargeting,
+    COUNT(a.adId) AS ad_count,
+    c.campaignId,
+    c.budget,
+    c.advertiserId,
+    c.createDate AS campaign_create_date
+FROM
+    Ads a
+INNER JOIN
+    Campaigns c ON a.campaignId = c.campaignId
+GROUP BY
+    a.geoTargeting
+ORDER BY
+    ad_count DESC
+LIMIT 3
+
+
+2. c
+Write a join query that would show the top 3 campaigns with the highest budget, with the
+corresponding ads
+
+SELECT
+    c.campaignId,
+    c.budget,
+    a.adId,
+    a.geoTargeting,
+    c.createDate AS campaign_create_date,
+    a.createDate AS ad_create_date
+FROM
+    Campaigns c
+LEFT JOIN
+    Ads a ON c.campaignId = a.campaignId
+ORDER BY
+    c.budget DESC
+LIMIT 3;
+
+(left join because some campaigns have high budget but no corresponding ads but they have to appear in the result as well)

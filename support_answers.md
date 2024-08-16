@@ -14,23 +14,19 @@ Hi Kim,
 
 Thank you for reaching out. We're excited to offer our support for your campaign.
 
-**Targeting Your Campaign to the US and Canada:**
-
 Yes, it is possible to run your campaign exclusively in the US and Canada. Outbrain allows you to geo-target your campaigns to specific countries. Since you're focusing on North America, here’s how you can set it up:
 
-1. **Navigate to Your Campaign Settings**:
+1. Navigate to Your Campaign Settings:
    - When setting up your campaign, go to the “Location Targeting” section.
 
-2. **Select the Target Locations**:
+2. Select the Target Locations:
    - Downoload Excel template and write location type (country) and location name (Canada, United States) in the template. Save it and import it back into "Location Targeting" section.
 
 You can see step by step video on this link under "Standard Targeting Capabilities": https://www.outbrain.com/help/advertisers/targeting-options/
 
-**About Content Variations:**
-
 In digital advertising, content variation refers to creating different versions of your ads. This could mean altering the headlines, images, or videos.
 
-**Why Variations Matter:**
+Why Variations Matter:
 - Different audiences may respond better to different visuals or wording. By testing variations, you can identify which version of your ad drives the most clicks and conversions.
 - Showing the same ad repeatedly can lead to decreased engagement. Variations help keep your audience interested.
 
@@ -60,29 +56,25 @@ I divided the whole text into seperate sections that nedd to be solved:
 
 Hi there,
 
-Thank you for contacting us about your conversion tracking issue. Let’s work together to figure out why your event-based conversion isn’t firing.
-
-**Verify Conversion Tracking Setup**
+Thank you for contacting us about your conversion tracking issue. We'll do our best to help you address it.
 
 First, let’s make sure that your event-based conversion is set up correctly:
 
-1. **Check the Conversion Tag**:
+1. Check the Conversion Tag:
    - Ensure that the conversion tag is properly installed on the relevant pages of your website. The tag should be placed within the `<body>` section of your HTML code. You can see example on this link under "Event-Based Conversions" section: https://www.outbrain.com/help/advertisers/create-conversions-using-the-outbrain-pixel/?post_type=advertisers
 
-2. **Review the Event Trigger**:
-   - Confirm that the event is correctly defined in your Outbrain dashboard. It should match the event name in your website’s code exactly. For example, if your event is a purchase, ensure that the tag is triggered when the purchase is completed. You can se step by step setup under "URL-Based Converions" on the link above.
+2. Review the Event Trigger:
+   - Confirm that the event is correctly defined in your Outbrain dashboard. It should match the event name in your website’s code exactly. You can see step by step setup under "URL-Based Converions" on the link above.
 
-**Test the Event Triggering**
+Now you can manually test whether the conversion is firing by:
 
-You can manually test whether the conversion is firing by:
-
-1. **Using a Browser Extension**:
+1. Using a Browser Extension:
    - There are browser extensions like "Pixel Helper" for Chrome that can help you see if the pixel fires when the event occurs.
 
-2. **Check the Network Tab**:
+2. Check the Network Tab:
    - In your browser's Developer Tools, go to the "Network" tab and look for the conversion event firing when you complete a purchase on your site. This will show whether the tag is being triggered.
 
-Please let us know if you continue to experience issues, and we’d be happy to provide further assistance.
+Please let us know if you continue to experience these issues, and we'll provide you further assistance.
 
 Best regards,  
 Outbrain Support Team
